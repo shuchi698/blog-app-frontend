@@ -1,9 +1,9 @@
 import React from 'react';
 import './Latest.css';
 import LatestComponent from './LatestComponent';
-import BlogData from '../../BlogData';
+// import BlogData from '../../BlogData';
 
-const Latest = () => {
+const Latest = ({ blogData }) => {
     return (
         <div className='Latest'>
             <div className='latest-box'>

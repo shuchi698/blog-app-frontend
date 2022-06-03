@@ -10,28 +10,42 @@ const CarosuelComponent = () => {
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
             </div>
-            <div className="carousel-inner">
-            <div className="carousel-item">
-                    <img src={BlogData[15].img} alt="Slide1"  className="d-block w-100" />
-                    <div className="carousel-caption">
-                        <Link to={`/${BlogData[15].category}/${BlogData[15].id}`}><h3>{BlogData[15].title}</h3></Link>
-                        <p>{BlogData[15].category} / {BlogData[15].date}</p>
-                    </div>
-                </div>
-                <div className="carousel-item">
-                    <img src={BlogData[14].img} alt="Slide1"  className="d-block w-100" />
-                    <div className="carousel-caption">
-                        <Link to={`/${BlogData[14].category}/${BlogData[14].id}`}><h3>{BlogData[14].title}</h3></Link>
-                        <p>{BlogData[14].category} {BlogData[14].date}</p>
-                    </div>
-                </div>
-                <div className="carousel-item active">
-                    <img src={BlogData[41].img} alt="Slide1"  className="d-block w-100"/>
-                    <div className="carousel-caption">
-                        <Link to={`/${BlogData[41].category}/${BlogData[41].id}`}><h3>{BlogData[41].title}</h3></Link>
-                        <p>{BlogData[41].category} {BlogData[41].date}</p>
-                    </div>
-                </div>
+             <div className="carousel-inner">
+                {
+                    blogData.filter(blog => blog.id === 15).map((data, index) => (
+                        <div className="carousel-item" key={index}>
+                            <img src={data.img} alt="Slide1"  className="d-block w-100" />
+                            <div className="carousel-caption">
+                                <Link to={`/category/${data.category}/${data.id}`}><h3>{data.title}</h3></Link>
+                                <p>{data.category} / {data.date}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+
+                {
+                    blogData.filter(blog => blog.id === 14).map((data, index) => (
+                        <div className="carousel-item" key={index}>
+                            <img src={data.img} alt="Slide2"  className="d-block w-100" />
+                            <div className="carousel-caption">
+                                <Link to={`/category/${data.category}/${data.id}`}><h3>{data.title}</h3></Link>
+                                <p>{data.category} / {data.date}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+
+                {
+                    blogData.filter(blog => blog.id === 41).map((data, index) => (
+                        <div className="carousel-item active" key={index}>
+                            <img src={data.img} alt="Slide3"  className="d-block w-100" />
+                            <div className="carousel-caption">
+                                <Link to={`/category/${data.category}/${data.id}`}><h3>{data.title}</h3></Link>
+                                <p>{data.category} / {data.date}</p>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#CarouselComponent" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon"></span>

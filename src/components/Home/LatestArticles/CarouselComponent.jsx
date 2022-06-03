@@ -1,5 +1,4 @@
 import React from 'react';
-import BlogData from '../../BlogData';
 import { Link } from 'react-router-dom';
 
 const CarosuelComponent = () => {

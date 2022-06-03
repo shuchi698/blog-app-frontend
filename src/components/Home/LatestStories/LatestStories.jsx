@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import BlogData from './../../BlogData';
 import LatestStoriesComponent from './LatestStoriesComponent';
 import './LatestStories.css';
 
-const LatestStories = () => {
+const LatestStories = ({ blogData }) => {
 
     const [postNumber, setPostNumber] =useState(19)
 
